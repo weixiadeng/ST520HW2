@@ -16,7 +16,8 @@ resvari <- paste("Residual variance:", res)
 
 png(filename = "HW2Q3.png", width = 1333, height = 1000, units = "px")
 par(mar = c(20, 12, 6, 12))
-plot(df$time, df$logC, pch = 19, cex.main = 3, cex.lab = 2, cex.axis = 1.5,
+plot(df$time, df$logC, pch = 19, cex = 2,
+     cex.main = 3, cex.lab = 2, cex.axis = 1.5,
      main = expression("Time vs"~italic("log C(t)")),
      xlab = expression("Time"~italic("t")~"(in hr)"),
      ylab = "Log of Drug concentration")
