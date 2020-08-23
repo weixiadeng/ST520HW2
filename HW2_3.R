@@ -14,12 +14,14 @@ fit <- paste("log C(t) = ", beta0, " - ", beta1, " * t", sep = "")
 slopvari <- paste("Variance of slope:", beta1var)
 resvari <- paste("Residual variance:", res)
 
-png(filename = "HW2Q3.png", width = 500, height = 500, units = "px")
-plot(df$time, df$logC, pch = 19,
+png(filename = "HW2Q3.png", width = 1333, height = 1000, units = "px")
+par(mar = c(20, 12, 6, 12))
+plot(df$time, df$logC, pch = 19, cex.main = 3, cex.lab = 2, cex.axis = 1.5,
      main = expression("Time vs"~italic("log C(t)")),
      xlab = expression("Time"~italic("t")~"(in hr)"),
-     ylab = "Log - Drug concentration")
+     ylab = "Log of Drug concentration")
      
 abline(inter, coef(slr), col = "red")
-legend(2, -1.6, legend = c(fit, slopvari, resvari), box.lty = 0, text.font = 3)
+legend(2, -1.6, legend = c(fit, slopvari, resvari),
+       cex = 2, box.lty = 0, text.font = 4)
 dev.off()
